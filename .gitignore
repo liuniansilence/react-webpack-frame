@@ -3,6 +3,7 @@
 # Logs
 logs
 *.log
+.gitignore
 npm-debug.log*
 
 # Runtime data
