@@ -1,0 +1,8 @@
+.header-box {
+	display: -webkit-flex;
+    display: flex;
+    height: 60px;
+    background-color: #427475;
+    color: #FFF;
+    font-size: 16px;
+}
