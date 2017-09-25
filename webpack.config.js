@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+var HappyPack = require('happypack');
 var HtmlwebpackPlugin = require('html-webpack-plugin'); // 生成html文件
 
 /****项目相关配置(app-config)****/
@@ -43,10 +44,13 @@ module.exports = {
                 'style-loader',
                 'css-loader',
                 'less-loader?{"sourceMap":false}'
-            ],
-            exclude: /node_modules/,
-            include: path.join(__dirname, "/src")
+              ],
+            exclude: /\.useable\.less$/
         }, {
+            test: /\.useable\.less$/,
+            exclude: /node_modules/,
+            loader: "style-loader/useable!css-loader!less-loader"
+        },{
             test: /\.js[x]?$/,
             exclude: /node_modules/,
             loader: 'babel-loader?presets[]=env&presets[]=react'
@@ -62,8 +66,23 @@ module.exports = {
         host: '0.0.0.0'
     },
     // 生成sourcemap,便于开发调试
-    devtool: 'eval',
+    devtool: 'source-map',
     plugins: [
+        new HappyPack({
+            id: 'jsx',
+            cache: true,
+            loaders: [{
+                path: 'babel-loader',
+                query: {
+                    plugins: [
+                        "transform-runtime", "transform-decorators-legacy", "add-module-exports"
+                    ],
+                    presets: ['env', 'react', "stage-0"],
+                    cacheDirectory: true
+                }
+            }],
+            threads: 6
+        }),
         new HtmlwebpackPlugin({
             title: APP_NAME_CN,
             template: path.join(__dirname, './app/index.html'),
@@ -74,14 +93,17 @@ module.exports = {
                 minifyCSS: true
             }
         }),
-
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: 'commons.js?[hash]',
             minChunks: 2 // 检测被引用两次即被抽离出来
         }),
         new webpack.ProvidePlugin({
-           "$": "webpack-zepto"
+            "$": "webpack-zepto"
         })
-    ]
+    ],
+
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
 };
