@@ -41,14 +41,23 @@ class NaviMenu extends React.Component {
                 <Menu.Item key="dataAnalyse">
                     <Icon type="appstore" />Data Analyse
                 </Menu.Item>
-                <SubMenu title={<span><Icon type="setting" />Graph</span>}>
+                <SubMenu title={<span><Icon type="area-chart" />Graph</span>}>
                     <Menu.Item key="setting1"><Icon type="bars" />setting 1</Menu.Item>
                     <Menu.Item key="setting2"><Icon type="bars" />setting 2</Menu.Item>
                     <Menu.Item key="setting3"><Icon type="bars" />setting 3</Menu.Item>
                     <Menu.Item key="setting4"><Icon type="bars" />setting 4</Menu.Item>
                 </SubMenu>
+                <Menu.Item key="Log">
+                    <Icon type="book" />Log
+                </Menu.Item>
+                <Menu.Item key="Message">
+                    <Icon type="mail" />Message
+                </Menu.Item>
+                <Menu.Item key="Introduce">
+                    <Icon type="desktop" />Introduce
+                </Menu.Item>
                 <Menu.Item key="tool">
-                    <Icon type="tool"/>setting
+                    <Icon type="tool"/>Setting
                     <a href="/demo/setting" rel="noopener noreferrer"></a>
                 </Menu.Item>
             </Menu>
@@ -56,4 +65,4 @@ class NaviMenu extends React.Component {
   }
 }
 
-module.exports = NaviMenu;
+export default NaviMenu;

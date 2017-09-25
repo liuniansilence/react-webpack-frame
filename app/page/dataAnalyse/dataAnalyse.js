@@ -6,12 +6,9 @@ let React = require('react');
 import Table from 'antd/lib/table';
 let GLOBAL_CONFIG = require('../../conf/conf.js');
 let commonPageStyle = require('../../component/widget/common/common.css');
-let dataPageStyle = require('./dataAnalyse.useable.css');
-// 首页顶部标题栏部分
-let HeaderElement = require('../../component/widget/header/header.jsx');
-let NaviMenu = require('../../component/widget/naviMenu/naviMenu.jsx')
-// 首页底部状态栏部分
-let FooterElement = require('../../component/widget/footer/footer.jsx');
+
+import style from './dataAnalyse.useable.less';
+
 
 class dataAnalyse extends React.Component {
 
@@ -26,12 +23,12 @@ class dataAnalyse extends React.Component {
         };
     }
     componentWillMount() {
-        dataPageStyle.use();
-        this.getTableDatas();
+        style.use();
+        // this.getTableDatas();
     }
 
     componentWillUnmount() {
-        dataPageStyle.unuse();
+        style.unuse();
     }
 
     getTableDatas() {
@@ -149,6 +146,7 @@ class dataAnalyse extends React.Component {
                     pagination={false}
                     scroll={{ y: 210 }}
                     />
+                show-dataAnalyse
             </div>);
     }
 }

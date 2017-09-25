@@ -7,23 +7,28 @@ import { hashHistory, Link } from 'react-router';
 var projectName = GLOBAL_CONFIG.projectName;
 
 // 首页顶部标题栏部分
-import HeaderElement from './component/widget/header/header.js';
-// import NaviMenu from './component/widget/naviMenu/naviMenu.js';
+var HeaderElement = require('./component/widget/header/header.js');
+var NaviMenu = require('./component/widget/naviMenu/naviMenu.js')
 // 首页底部状态栏部分
-import FooterElement from './component/widget/footer/footer.js';
+var FooterElement = require('./component/widget/footer/footer.js');
 
-var App = React.createClass({
-    render: function() {
+class App extends React.Component {
+    constructor(){
+        super();
+    }
+    render() {
         return (
             <div className="ecnu-page">
                 <HeaderElement title='data'/>
-                {/* <NaviMenu/> */}
-                {this.props.children}
+                <div className="wrap-content">
+                    <NaviMenu/>
+                    {this.props.children}
+                </div>
                 <FooterElement/>
             </div>
         );
     }
-});
+};
 
 var subRoutes = [
     {

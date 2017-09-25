@@ -1,24 +1,25 @@
 var React = require('react');
 var footerPageStyle = require('./footer.useable.css');
 
-var footerComponent = React.createClass({
-	getInitialState: function() {
-		return {
+class footerComponent extends React.Component{
+	constructor(){
+        super();
+    }
 
-		};
-	},
-	componentWillMount: function () {
+	componentWillMount () {
         footerPageStyle.use();
-    },
-    componentWillUnmount: function() {
+    }
+    componentWillUnmount() {
         footerPageStyle.unuse();
-    },
-    render: function() {
+    }
+    
+    render() {
         return (
             <div className="footer-box">
                 @liuniansilence@163.com
             </div>
         );
     }
-});
-module.exports = footerComponent;
+}
+
+export default footerComponent;

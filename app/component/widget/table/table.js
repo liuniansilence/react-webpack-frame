@@ -1,20 +1,17 @@
 var React = require('react');
 var tableStyle = require('./table.useable.css');
 
-class TableEle extends React.Component{
-    constructor(){
-        super();
-    }
-    componentWillMount () {
+var TableEle = React.createClass({
+    componentWillMount: function () {
         tableStyle.use();
-    }
-    componentWillUnmount() {
+    },
+    componentWillUnmount: function() {
         tableStyle.unuse();
-    }
-    componentDidMount() {
+    },
+    componentDidMount: function() {
         
-    }
-    getDefaultProps() {
+    },
+    getDefaultProps: function() {
         return {
             /**
              * 传递参数格式说明
@@ -36,8 +33,8 @@ class TableEle extends React.Component{
                 body: []
             }
         };
-    }
-    render() {
+    },
+    render: function() {
         var datas = this.props.datas;
         var tHead = datas.head;
         var tBody = datas.body;
@@ -72,6 +69,7 @@ class TableEle extends React.Component{
             </div>
         );
     }
-};
+});
 
-export default TableEle;
+
+module.exports = TableEle;
