@@ -14,17 +14,18 @@ class dataAnalyse extends React.Component {
 
     constructor() {
         super();
+                    
         this.state = {
             table: {
                 columns: null,
-                datas: null,
-                totalDatas: null
+                datas: null
+                // totalDatas: null
             }
         };
     }
     componentWillMount() {
         style.use();
-        // this.getTableDatas();
+        this.getTableDatas();
     }
 
     componentWillUnmount() {
@@ -36,7 +37,7 @@ class dataAnalyse extends React.Component {
         let _distID = _this.distID;
         let _distName = _this.distName;
         let requestParams = {
-            "scriptname": (_this.landType === "1") ? "jdgis.queryStatByArea" : "jdgis.queryStatByInfo",
+            "scriptname":"jdgis.queryStatByArea",
             "filter": "1=1",
             "groupby": "镇名",
             "updateFilter": "镇名=mytbl.镇名"
@@ -60,12 +61,13 @@ class dataAnalyse extends React.Component {
 
     // 处理后端返回数据
     handleAgriResult(data) {
+        console.log(data);
         let _this = this;
         if (data.result == 0) {
             // 请求数据成功
             let fields = data.query_1.fldsDef;
             let datas = data.query_1.data;
-            let totalDatas = data.query_1.totaldata;
+            // let totalDatas = data.query_1.totaldata;
             let agriColumns = _this.getColumns(fields);
             let agriDatas = _this.getDatas(agriColumns, datas);
             _this.setState({
@@ -100,7 +102,7 @@ class dataAnalyse extends React.Component {
                 title: tmpField.name,
                 dataIndex: tmpField.name,
                 width: perWidth,
-                className: 'agri-header'
+                className: 'data-header'
             }
             finalColumns.push(tmpColumn);
         }
@@ -116,7 +118,7 @@ class dataAnalyse extends React.Component {
      */
     getDatas (fields, datas) {
         var datasLen = datas.length;
-        var finalDatas = {datas:[],totalDatas:[]};
+        var finalDatas = {datas:[]};
         for (var i = 0; i < datasLen; i++) {
             var tmpData = datas[i];
             var tmpDataLen = tmpData.length;
@@ -124,9 +126,7 @@ class dataAnalyse extends React.Component {
             for (var j = 2; j < tmpDataLen; j++) {
                 tmpDataJson[fields[j - 2]['dataIndex']] = tmpData[j];
             }
-            if(i == 0) {
-                finalDatas.totalDatas = tmpData.slice(2);
-            } else {
+            if(i != 0) {
                 finalDatas.datas.push(tmpDataJson);
             }
         }
@@ -144,9 +144,7 @@ class dataAnalyse extends React.Component {
                     columns={tableColumns}
                     dataSource={tableDatas}
                     pagination={false}
-                    scroll={{ y: 210 }}
                     />
-                show-dataAnalyse
             </div>);
     }
 }

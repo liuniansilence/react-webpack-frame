@@ -7,10 +7,11 @@ var HtmlwebpackPlugin = require('html-webpack-plugin'); // 生成html文件
 const APP_NAME_EN = 'demo-test';
 const APP_NAME_CN = '演示demo';
 const PROXY_CONFIG = { // api匹配规则配置
-    '/prefix/**': {
-        target: 'http://127.0.0.1:8888',
-        secure: false
-    }
+    // '/prefix/**': {
+    //     target: 'http://127.0.0.1:8888',
+    //     secure: false
+    // }
+    
 };
 
 
@@ -18,7 +19,7 @@ const PROXY_CONFIG = { // api匹配规则配置
 module.exports = {
     context: path.resolve(__dirname, 'app'),
     entry: {
-        app: './index.jsx',
+        app: './index.js',
     },
     output: {
         // 文件输出目录

@@ -7,10 +7,9 @@ import { hashHistory, Link } from 'react-router';
 var projectName = GLOBAL_CONFIG.projectName;
 
 // 首页顶部标题栏部分
-var HeaderElement = require('./component/widget/header/header.js');
-var NaviMenu = require('./component/widget/naviMenu/naviMenu.js')
+import HeaderElement from './component/widget/header/header.js';
 // 首页底部状态栏部分
-var FooterElement = require('./component/widget/footer/footer.js');
+// import FooterElement from './component/widget/footer/footer.js';
 
 class App extends React.Component {
     constructor(){
@@ -21,10 +20,8 @@ class App extends React.Component {
             <div className="ecnu-page">
                 <HeaderElement title='data'/>
                 <div className="wrap-content">
-                    <NaviMenu/>
                     {this.props.children}
                 </div>
-                <FooterElement/>
             </div>
         );
     }

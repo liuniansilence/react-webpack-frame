@@ -1,6 +1,6 @@
 var React = require('react');
 var headeStyle = require('./header.useable.less');
-import NaviMenu from '../naviMenu/naviMenu.jsx';
+import NaviMenu from '../naviMenu/naviMenu.js';
 
 class headerComponent extends React.Component{
 	constructor(){
