@@ -1,7 +1,7 @@
 const GLOBAL_CONFIG = {
-    projectName: 'jdgis',
+    projectName: 'demo',
     requestUrl: {
-    	getAgriData: '/geosvr145/websqlscript' 
+    	getAgriData: 'requestUrl' 
     }
 };
 
