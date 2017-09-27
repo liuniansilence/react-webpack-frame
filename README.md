@@ -28,6 +28,7 @@ webroot
 
 ###1、第一步
   npm install -g webpack@2
+  
   npm install -g webpack-dev-server@2
 
 ###2、第二步
