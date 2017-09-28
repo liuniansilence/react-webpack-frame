@@ -14,8 +14,6 @@ const PROXY_CONFIG = { // api匹配规则配置
     
 };
 
-
-
 module.exports = {
     context: path.resolve(__dirname, 'app'),
     entry: {

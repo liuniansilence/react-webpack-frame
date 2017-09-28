@@ -19,13 +19,11 @@ class dataAnalyse extends React.Component {
             table: {
                 columns: null,
                 datas: null
-                // totalDatas: null
             }
         };
     }
     componentWillMount() {
         style.use();
-        this.getTableDatas();
     }
 
     componentWillUnmount() {
@@ -37,13 +35,7 @@ class dataAnalyse extends React.Component {
         const tableColumns    = _this.state.table.columns,
               tableDatas      = _this.state.table.datas,
               distName        = _this.distName;
-        return (<div className = "content-box">                
-                <Table
-                    columns={tableColumns}
-                    dataSource={tableDatas}
-                    pagination={false}
-                    />
-            </div>);
+        return (<div className = "content-box">data-analyse</div>);
     }
 }
 module.exports = dataAnalyse;
