@@ -36,7 +36,7 @@ var subRoutes = [
             }, 'dataAnalyse');
         },
         onEnter: function () {
-            console.log('dataAnalyse');
+            
         },
         onLeave: function () {
 

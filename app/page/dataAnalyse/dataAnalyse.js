@@ -19,7 +19,6 @@ class dataAnalyse extends React.Component {
             table: {
                 columns: null,
                 datas: null
-                // totalDatas: null
             }
         };
     }
