@@ -47,8 +47,8 @@ class NaviMenu extends React.Component {
                     <Menu.Item key="setting3"><Icon type="bars" />setting 3</Menu.Item>
                     <Menu.Item key="setting4"><Icon type="bars" />setting 4</Menu.Item>
                 </SubMenu>
-                <Menu.Item key="Log">
-                    <Icon type="book" />Log
+                <Menu.Item key="upload">
+                    <Icon type="book" />upload22
                 </Menu.Item>
                 <Menu.Item key="Message">
                     <Icon type="mail" />Message

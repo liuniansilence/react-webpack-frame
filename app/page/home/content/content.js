@@ -1,7 +1,7 @@
 var React = require('react');
 import { Table } from 'antd';
 let GLOBAL_CONFIG = require('../../../conf/conf.js');
-var contentPageStyle = require('./content.useable.css');
+var contentPageStyle = require('./content.less');
 
 class contentComponent extends React.Component{
     constructor() {
@@ -61,7 +61,7 @@ class contentComponent extends React.Component{
 
     }
     render() {
-        let data = 
+        let data = [];
         return (
             <div className="content-box">
                 <Table columns={this.columns} dataSource={data} />

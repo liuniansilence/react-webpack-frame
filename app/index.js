@@ -73,8 +73,9 @@ var RootRoute = {
     }]
 };
 
-window.onload = function() {
-    ReactDOM.render((
-        <Router routes={RootRoute} history={hashHistory}/>
-    ), document.querySelector('#ecnu-app'));
-};
+
+ReactDOM.render((
+    <Router routes={RootRoute} history={hashHistory}/>
+), document.querySelector('#ecnu-app'));
+
+

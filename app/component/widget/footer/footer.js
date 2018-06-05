@@ -1,5 +1,5 @@
 var React = require('react');
-var footerPageStyle = require('./footer.useable.css');
+var footerPageStyle = require('./footer.less');
 
 class footerComponent extends React.Component{
 	constructor(){
@@ -7,10 +7,10 @@ class footerComponent extends React.Component{
     }
 
 	componentWillMount () {
-        footerPageStyle.use();
+        // footerPageStyle.use();
     }
     componentWillUnmount() {
-        footerPageStyle.unuse();
+        // footerPageStyle.unuse();
     }
     
     render() {

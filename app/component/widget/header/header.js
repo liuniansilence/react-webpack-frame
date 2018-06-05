@@ -1,5 +1,5 @@
 var React = require('react');
-var headeStyle = require('./header.useable.less');
+var headeStyle = require('./header.less');
 import NaviMenu from '../naviMenu/naviMenu.js';
 
 class headerComponent extends React.Component{
@@ -7,10 +7,10 @@ class headerComponent extends React.Component{
         super();
     }
 	componentWillMount () {
-        headeStyle.use();
+        // headeStyle.use();
     }
     componentWillUnmount() {
-        headeStyle.unuse();
+        // headeStyle.unuse();
     }
     render() {
         return (

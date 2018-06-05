@@ -1,12 +1,12 @@
 var React = require('react');
-var tableStyle = require('./table.useable.css');
+var tableStyle = require('./table.less');
 
 var TableEle = React.createClass({
     componentWillMount: function () {
-        tableStyle.use();
+        // tableStyle.use();
     },
     componentWillUnmount: function() {
-        tableStyle.unuse();
+        // tableStyle.unuse();
     },
     componentDidMount: function() {
         

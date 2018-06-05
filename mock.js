@@ -4,7 +4,7 @@ var app = express();
 app.use(bodyParser.json());
 // 端口号
 app.listen(8888);
-console.log('server start');
+// console.log('server start');
 
 /******************demo【start】************************/
 // 1、常规mock get
