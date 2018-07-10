@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 var GLOBAL_CONFIG = require('./conf/conf.js');
 var ReactDOM = require('react-dom');
 var Router = require('react-router/lib/Router');

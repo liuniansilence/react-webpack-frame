@@ -28,7 +28,7 @@ app.use(bodyParser.json({
 }))
 app.use(express.static(publicPath));
 
-const port = isProduction ? (process.env.PORT || 80) : 8080;
+const port = isProduction ? (process.env.PORT || 80) : 8081;
 
 app.listen(port, function(err, result) {
     if (err) {
